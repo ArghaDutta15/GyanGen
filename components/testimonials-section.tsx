@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -66,11 +66,11 @@ export function TestimonialsSection() {
   ]
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
   }
 
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
   useEffect(() => {
@@ -93,24 +93,22 @@ export function TestimonialsSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Students Say</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our successful graduates have to say about their GyanGen
-            experience.
+            Don&apos;t just take our word for it. Here&apos;s what our successful graduates have to say about their
+            GyanGen experience.
           </p>
         </div>
 
         <div className="relative">
           <div className="grid md:grid-cols-3 gap-8">
-            {getVisibleTestimonials().map((testimonial, index) => (
-              <Card key={`${currentIndex}-${index}`} className="border-0 shadow-lg">
+            {getVisibleTestimonials().map((testimonial) => (
+              <Card key={testimonial.name} className="border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-
                   <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
-
                   <div className="flex items-center">
                     <img
                       src={testimonial.image || "/placeholder.svg"}
@@ -128,21 +126,36 @@ export function TestimonialsSection() {
             ))}
           </div>
 
+          {/* Arrows */}
           <div className="flex justify-center mt-8 space-x-4">
-            <Button variant="outline" size="sm" onClick={prevTestimonial} className="rounded-full w-10 h-10 p-0">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={prevTestimonial}
+              className="rounded-full w-10 h-10 p-0"
+              aria-label="Previous testimonial"
+            >
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="sm" onClick={nextTestimonial} className="rounded-full w-10 h-10 p-0">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={nextTestimonial}
+              className="rounded-full w-10 h-10 p-0"
+              aria-label="Next testimonial"
+            >
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
 
+          {/* Dots */}
           <div className="flex justify-center mt-4 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
+                aria-label={`Go to testimonial ${index + 1}`}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
+                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
                   index === currentIndex ? "bg-blue-600" : "bg-gray-300"
                 }`}
               />
