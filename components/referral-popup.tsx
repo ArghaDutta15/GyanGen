@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { X, Gift, Users, Share2 } from 'lucide-react'
+import { X, Gift, Users, Share2 } from "lucide-react"
 
 export function ReferralPopup() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,34 +14,37 @@ export function ReferralPopup() {
   const [friendEmail, setFriendEmail] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
 
+  // Show popup after 30s
   useEffect(() => {
-    // Show popup after 30 seconds
-    const timer = setTimeout(() => {
-      setIsOpen(true)
-    }, 30000)
-
+    const timer = setTimeout(() => setIsOpen(true), 30000)
     return () => clearTimeout(timer)
   }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitted(true)
+
+    // Auto-close after 3s
     setTimeout(() => {
       setIsOpen(false)
+      setIsSubmitted(false)
+      setEmail("")
+      setFriendEmail("")
     }, 3000)
   }
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-md">
+    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 backdrop-blur-sm">
+      <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="relative">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setIsOpen(false)}
             className="absolute right-2 top-2 h-8 w-8 p-0"
+            aria-label="Close"
           >
             <X className="h-4 w-4" />
           </Button>
@@ -64,10 +66,10 @@ export function ReferralPopup() {
                   <Users className="h-5 w-5 mr-2 text-purple-600" />
                   How it works:
                 </h3>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• You get ₹2,000 discount on your course</li>
-                  <li>• Your friend gets ₹1,000 discount too</li>
-                  <li>• Both of you save money!</li>
+                <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                  <li>You get ₹2,000 discount on your course</li>
+                  <li>Your friend gets ₹1,000 discount too</li>
+                  <li>Both of you save money!</li>
                 </ul>
               </div>
 
@@ -104,11 +106,11 @@ export function ReferralPopup() {
               </Button>
 
               <p className="text-xs text-gray-500 text-center">
-                By referring, you agree to our referral terms and conditions.
+                By referring, you agree to our <a href="#" className="underline">referral terms and conditions</a>.
               </p>
             </form>
           ) : (
-            <div className="text-center py-8">
+            <div className="text-center py-8 animate-fade-in">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Gift className="h-8 w-8 text-green-600" />
               </div>
