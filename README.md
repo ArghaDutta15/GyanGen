@@ -1,10 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a Next.js project developed for GyanGen, an educational platform offering technical courses for aspiring developers. The website serves as a digital gateway to showcase the brand, highlight courses, and allow seamless student enrollment.
 
-## Getting Started
+🛠️ Project Title
+Development of a Responsive Single-Page Website for GyanGen
+Deadline: June 5, 2025
 
-First, run the development server:
+🚀 Project Overview
+The GyanGen website is designed to:
 
-```bash
+Present GyanGen’s mission and offerings in a visually compelling manner.
+
+Display featured technical courses using interactive course cards.
+
+Facilitate student registrations with an inline enrollment form.
+
+Provide pricing information, referral benefits, testimonials, and real-time chat support.
+
+📌 Website Sections
+Homepage
+
+Eye-catching landing section with GIFs/images introducing the platform.
+
+Company Showcase
+
+Brief, impactful description of GyanGen’s mission and services.
+
+Courses
+
+Highlights 4 primary offerings:
+
+Python with GenAI
+
+Python Full Stack
+
+MERN Stack
+
+MEAN Stack
+
+Each course is shown in a card with title, image, and "View Syllabus" button.
+
+Testimonials
+
+Learner feedback in a carousel or grid layout (with name, image, short review).
+
+Enrollment Form
+
+Inline registration form with:
+
+Name
+
+Email
+
+Phone Number
+
+Course Selection
+
+Pricing Details
+
+Standard Fee: ₹25,000
+
+Early Bird Discount: ₹5,000
+
+Referral Discount: ₹2,000
+
+Referral Popup
+
+Modal encouraging users to refer friends, outlining benefits.
+
+Chat Support
+
+Floating button for real-time assistance (via widget or custom integration).
+
+Footer
+
+Social media links
+
+Contact details
+
+Company overview
+
+🧱 Tech Stack
+Frontend: React.js with Next.js (Single Page Application)
+
+Backend: Flask (Python) or Node.js (Express)
+
+Database: MySQL
+
+Styling: Tailwind CSS or standard CSS modules
+
+🎨 Design Guidelines
+Theme: Light Mode
+
+Colors: Sky Blue, Light Orange, Yellow, Black, White
+
+Style: Clean, modern, responsive, accessible
+
+🧑‍💻 Getting Started
+To run the development server:
+
+bash
+Copy
+Edit
 npm run dev
 # or
 yarn dev
@@ -12,25 +107,19 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+Then open http://localhost:3000 to see the app in action.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start editing from app/page.tsx. Changes auto-update during development.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📚 Learn More
+Next.js Documentation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Learn Next.js Tutorial
 
-## Learn More
+Next.js GitHub
 
-To learn more about Next.js, take a look at the following resources:
+📦 Deploy on Vercel
+For seamless deployment, use the Vercel platform.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Check out Next.js Deployment Docs for help.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
