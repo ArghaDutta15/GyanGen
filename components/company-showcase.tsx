@@ -31,7 +31,7 @@ export function CompanyShowcase() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose GyanGen?</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're committed to transforming careers through comprehensive technical education. Our mission is to bridge
+            We&rsquo;re committed to transforming careers through comprehensive technical education. Our mission is to bridge
             the gap between academic learning and industry requirements.
           </p>
         </div>
@@ -53,7 +53,7 @@ export function CompanyShowcase() {
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Career?</h3>
           <p className="text-xl opacity-90 mb-6">
-            Join thousands of successful graduates who've launched their tech careers with GyanGen
+            Join thousands of successful graduates who&rsquo;ve launched their tech careers with GyanGen
           </p>
           <div className="flex flex-wrap justify-center gap-8 text-center">
             <div>
