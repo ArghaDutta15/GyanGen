@@ -59,7 +59,7 @@ export function ChatSupport() {
                   <X className="h-4 w-4" />
                 </Button>
               </div>
-              <p className="text-blue-100 text-sm">We're here to help!</p>
+              <p className="text-blue-100 text-sm">We&rsquo;re here to help!</p>
             </CardHeader>
 
             <CardContent className="flex flex-col h-full p-0">
